@@ -1,10 +1,10 @@
 ## Free your component from [connect](https://github.com/reactjs/react-redux), free yourself from extra code
 
-> `redux-act-dispatch-free` extend `redux-act` for async actions call without dispatch.
+> `redux-act-dispatch-free` extends `redux-act` so that you can call async actions without dispatch.
 
-> Of course this work only with [assigned](https://github.com/pauldijou/redux-act#assignallactioncreators-stores) or [bonded](https://github.com/pauldijou/redux-act#bindallactioncreators-stores) actions
+> Of course this works only with [assigned](https://github.com/pauldijou/redux-act#assignallactioncreators-stores) or [bound](https://github.com/pauldijou/redux-act#bindallactioncreators-stores) actions
 
-> So it **granted access to** bounded **store** from *asyncAction*
+> So it **allows you to access** a bound **store** from an *asyncAction*
 
 > 1KB size gzip
 
