@@ -1,9 +1,10 @@
-## `redux-act-dispatch-free` extend `redux-act` for async actions call without dispatch.
+## Free your component from [connect](https://github.com/reactjs/react-redux), free yourself from extra code
+
+> `redux-act-dispatch-free` extend `redux-act` for async actions call without dispatch.
 
 > Of course this work only with [assigned](https://github.com/pauldijou/redux-act#assignallactioncreators-stores) or [bonded](https://github.com/pauldijou/redux-act#bindallactioncreators-stores) actions
 
-> So it **granted access to** bounded **store**
-
+> So it **granted access to** bounded **store** from *asyncAction*
 
 ### Examples
 ```javascript
