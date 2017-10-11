@@ -6,7 +6,9 @@
 
 > So it **granted access to** bounded **store** from *asyncAction*
 
-### Examples
+> 1KB size gzip
+
+### Example
 ```javascript
 // userActions.js
 import { createAction } from 'redux-act';
@@ -53,4 +55,4 @@ import { fetchUserInfo } from 'actions/userActions';
 //...
 ```
 
-> **Attentions:** bindAll and assignAll not work with [SSR](http://redux.js.org/docs/recipes/ServerRendering.html)
+> **Attentions:** *bindAll* and *assignAll* not work with [SSR](http://redux.js.org/docs/recipes/ServerRendering.html)
