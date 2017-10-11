@@ -1,0 +1,22 @@
+{
+  "name": "redux-act-dispatch-free",
+  "version": "1.0.0",
+  "description": "extend 'redux-act' package for async actions call without dispatch",
+  "main": "index.js",
+  "dependencies": {
+    "redux-act": "^1.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artalar/redux-act-dispatch-free.git"
+  },
+  "keywords": [
+    "redux-act"
+  ],
+  "author": "artalar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artalar/redux-act-dispatch-free/issues"
+  },
+  "homepage": "https://github.com/artalar/redux-act-dispatch-free#readme"
+}
