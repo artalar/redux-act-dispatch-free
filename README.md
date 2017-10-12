@@ -6,7 +6,12 @@
 
 > So it **allows you to access** a bound **store** from an *asyncAction*
 
-> 1KB size gzip
+> 1k size minified, 0.1kB minified + gzipped
+
+### Instalation
+```bash
+npm install redux-act-dispatch-free --save
+```
 
 ### Example
 ```javascript
