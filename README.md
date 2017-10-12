@@ -14,17 +14,17 @@
 import { createAction } from 'redux-act';
 import { createAsyncAction } from 'redux-act-dispatch-free';
 
-export const responseUserAuthorization = createAction('response user authorization');
-export const errorResponceUserAuthorization = createAction('error response user authorization');
+export const responseUserInfo = createAction('response user Info');
+export const errorResponceUserInfo = createAction('error response user Info');
 
 export const fetchUserInfo = createAsyncAction(
   'request user data',
-  store => async () => {
+  store => async userId => {
     try {
-      const response = await api.getMe();
-      responceUserInfo(response.data.result.user);
+      const response = await api.getUser(userId);
+      responceUserInfo(response.data);
     } catch (e) {
-      console.log(e)
+      console.error(e)
       errorResponceUserInfo(e.message ? e.message : e);
     }
   }
@@ -50,7 +50,7 @@ import actions from 'actions';
 import { fetchUserInfo } from 'actions/userActions';
 //...
   componentDidMount = () => {
-    fetchUserInfo()
+    fetchUserInfo(this.props.yuerId)
   };
 //...
 ```

@@ -1,10 +1,32 @@
 {
   "name": "redux-act-dispatch-free",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "extend 'redux-act' package for async actions call without dispatch",
-  "main": "index.js",
+  "main": "/lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "scripts": {
+    "prepublish": "npm run rebuild:es && npm run rebuild:cjs",
+    "postpublish": "npm run clean",
+    "build": "npm run build:cjs && npm run build:es",
+    "build:cjs": "cross-env BABEL_ENV=commonjs babel src/ -d lib -s",
+    "build:es": "babel src/ -d es -s",
+    "clean": "npm run clean:es && npm run clean:cjs",
+    "clean:cjs": "rimraf lib/",
+    "clean:es": "rimraf es/",
+    "rebuild:cjs": "npm run clean:cjs & npm run build:cjs",
+    "rebuild:es": "npm run clean:es & npm run build:es"
+  },
   "dependencies": {
     "redux-act": "^1.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "rimraf": "^2.6.2"
   },
   "repository": {
     "type": "git",
