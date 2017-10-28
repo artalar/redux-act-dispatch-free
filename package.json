@@ -2,7 +2,7 @@
   "name": "redux-act-dispatch-free",
   "version": "1.1.1",
   "description": "extend 'redux-act' package for async actions call without dispatch",
-  "main": "/lib/index.js",
+  "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
