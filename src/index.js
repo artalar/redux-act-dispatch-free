@@ -1,3 +1,5 @@
+import { createAction } from 'redux-act';
+
 export const createAsyncAction = (description, asyncFunction) =>
   createAction(description, (...args) => ({
     ...args,
