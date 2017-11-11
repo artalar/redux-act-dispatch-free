@@ -24,7 +24,7 @@ export const asyncActionsCallerMiddleware = store => next => action => {
   return next(action);
 };
 
-const createAsyncCycle = (description, asyncFunction) => {
+export const createAsyncCycle = (description, asyncFunction) => {
   const success = createAction(`[success] ${description}`);
   const error = createAction(`[error] ${description}`);
   const fetch = createAction(`[fetch] ${description}`, (...args) => ({
