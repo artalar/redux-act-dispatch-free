@@ -1,12 +1,13 @@
 {
   "name": "redux-act-dispatch-free",
-  "version": "1.2.4",
-  "description": "extend 'redux-act' package for async actions call without dispatch",
+  "version": "1.2.9",
+  "description":
+    "extend 'redux-act' package for async actions call without dispatch",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
-    "prepublish": "npm run rebuild:es && npm run rebuild:cjs",
+    "prepublishOnly": "npm run rebuild:es && npm run rebuild:cjs",
     "postpublish": "npm run clean",
     "build": "npm run build:cjs && npm run build:es",
     "build:cjs": "cross-env BABEL_ENV=commonjs babel src/ -d lib -s",
@@ -18,7 +19,8 @@
     "rebuild:es": "npm run clean:es & npm run build:es"
   },
   "dependencies": {
-    "redux-act": "^1.5.0"
+    "redux-act": "^1.5.0",
+    "regenerator-runtime": "^0.11.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -32,9 +34,7 @@
     "type": "git",
     "url": "git+https://github.com/artalar/redux-act-dispatch-free.git"
   },
-  "keywords": [
-    "redux", "redux-act"
-  ],
+  "keywords": ["redux", "redux-act"],
   "author": "artalar",
   "license": "ISC",
   "bugs": {

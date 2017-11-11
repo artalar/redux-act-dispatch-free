@@ -1,3 +1,7 @@
+// for build async code
+import regeneratorRuntime from "regenerator-runtime";
+
+
 import { createAction } from 'redux-act';
 
 export const createAsyncAction = (description, asyncFunction) =>
