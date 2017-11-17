@@ -14,6 +14,43 @@ npm install redux-act-dispatch-free --save
 ```
 
 ### Example
+
+> `createAsyncCycle` new at 17 nov 2017
+
+```javascript
+// userActions.js
+import { createAsyncCycle } from 'redux-act-dispatch-free';
+
+// You can return any async (or not) function
+// and thay will automaticaly dispatch all async lifecicle functions
+export const [fetchGetUserData, successGetUserData, errorGetUserData] = createAsyncCycle(
+  'get user data',
+  store => () => api.getUserData(store.getState().app.user.uid)
+);
+```
+#### Call `fetchGetUserData` will generate^
+
+> "[fetch] get user data"
+
+> ...after some time...
+
+> "[success] get user data" or "[error] get user data"
+
+#### You can customize output payload
+
+```javascript
+export const [fetchGetUserData, successGetUserData, errorGetUserData] = createAsyncCycle(
+  'get user data',
+  store => () => api.getUserData(store.getState().app.user.uid),
+  // success
+  payload => payload.data,
+  // error
+  error => error.response.status
+);
+```
+
+#### More custom way
+
 ```javascript
 // userActions.js
 import { createAction } from 'redux-act';
@@ -59,5 +96,17 @@ import { fetchUserInfo } from 'actions/userActions';
   };
 //...
 ```
+
+#
+
+> Likewise you can import only needed methods
+
+```javascript
+// userActions.js
+import createAsyncCycle from 'redux-act-dispatch-free/createAsyncCycle';
+```
+
+#
+
 
 > **Attention:** *bindAll* and *assignAll* do not work with [SSR](http://redux.js.org/docs/recipes/ServerRendering.html)
